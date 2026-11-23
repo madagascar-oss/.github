@@ -1,0 +1,45 @@
+name: Reusable lint
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  actionlint:
+    name: actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Lint GitHub Actions workflows
+        run: |
+          if compgen -G ".github/workflows/*.y*ml" > /dev/null; then
+            docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint:1.7.7 -color
+          else
+            echo "No workflows to lint"
+          fi
+
+  markdown:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"
+
+  yaml:
+    name: yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Lint YAML
+        run: |
+          pipx run yamllint==1.35.1 -d '{extends: relaxed, rules: {line-length: disable}}' .
