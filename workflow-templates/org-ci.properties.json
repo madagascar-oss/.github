@@ -1,0 +1,6 @@
+{
+  "name": "Madagascar OSS CI",
+  "description": "Org-standard CI: actionlint, markdownlint, yamllint, plus a slot for build/test.",
+  "iconName": "octicon check-circle",
+  "categories": ["Continuous integration"]
+}

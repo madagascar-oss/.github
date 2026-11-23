@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [$default-branch]
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    uses: madagascar-oss/.github/.github/workflows/reusable-lint.yml@main
+
+  # Add project-specific build/test jobs below.
