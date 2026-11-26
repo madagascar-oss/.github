@@ -1,0 +1,38 @@
+name: Profile stats
+
+# Refreshes the "Mdgascar in numbers" cards on the org profile README.
+# The SVGs live on the `stats` branch (one orphan commit, replaced each run), so main stays
+# untouched and its rules (pull requests, signed commits) still apply.
+
+on:
+  schedule:
+    - cron: '17 3 * * *' # daily, 03:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/profile-stats.mjs
+      - .github/workflows/profile-stats.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-stats
+  cancel-in-progress: true
+
+jobs:
+  stats:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # push the stats branch
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Build and publish the cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/profile-stats.mjs "$RUNNER_TEMP/stats" --publish
