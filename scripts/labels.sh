@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Create or update the standard label set on a repo (idempotent).
 # Usage: scripts/labels.sh <repo-name> [module ...]
-# Example: scripts/labels.sh mg-utils phone ariary words date
+# Example: scripts/labels.sh mdg-utils phone ariary words date
 set -euo pipefail
 
-ORG=madagascar-oss
+ORG=mdgascar
 REPO=${1:?usage: labels.sh <repo-name> [module ...]}
 shift
 MODULES=("$@")

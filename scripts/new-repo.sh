@@ -4,7 +4,7 @@
 # Usage: scripts/new-repo.sh <name> "<description>" [--private]
 set -euo pipefail
 
-ORG=madagascar-oss
+ORG=mdgascar
 NAME=${1:?usage: new-repo.sh <name> "<description>" [--private]}
 DESC=${2:-}
 VIS=${3:---public}

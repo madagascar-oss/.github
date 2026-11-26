@@ -26,7 +26,7 @@ identity and orientation.
 ## Enforcement
 
 Report incidents to the maintainers by opening a private
-[security advisory](https://github.com/madagascar-oss/.github/security/advisories/new)
+[security advisory](https://github.com/mdgascar/.github/security/advisories/new)
 on the `.github` repository, or by contacting an organization owner directly.
 All reports will be reviewed promptly and kept confidential.
 
