@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in contributing to Madagascar OSS! This guide applies to
+Thanks for your interest in contributing to Mdgascar! This guide applies to
 every repository in the organization unless a repository provides its own.
 
 ## Ground rules
