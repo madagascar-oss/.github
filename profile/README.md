@@ -22,7 +22,7 @@ Malagasy data done right: official sources, shared test vectors, one behaviour i
   <img alt="Mdgascar in numbers: repositories, commits, merged pull requests, contributors, spec version, modules, shared test vectors, stars and languages" src="https://raw.githubusercontent.com/mdgascar/.github/stats/stats-light.svg" width="100%">
 </picture>
 
-<sub>Refreshed every day by the <a href="https://github.com/mdgascar/.github/blob/main/.github/workflows/profile-stats.yml">profile stats workflow</a>.</sub>
+<sub>Refreshed every hour by the <a href="https://github.com/mdgascar/.github/blob/main/.github/workflows/profile-stats.yml">profile stats workflow</a>.</sub>
 
 ## 🧰 mdg-utils
 

@@ -1,12 +1,12 @@
 name: Profile stats
 
-# Refreshes the "Mdgascar in numbers" cards on the org profile README.
+# Refreshes the "Mdgascar in numbers" cards on the org profile README every hour.
 # The SVGs live on the `stats` branch (one orphan commit, replaced each run), so main stays
 # untouched and its rules (pull requests, signed commits) still apply.
 
 on:
   schedule:
-    - cron: '17 3 * * *' # daily, 03:17 UTC
+    - cron: '17 * * * *' # hourly, at minute 17
   workflow_dispatch:
   push:
     branches: [main]
